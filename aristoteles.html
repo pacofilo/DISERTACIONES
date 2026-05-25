@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aristóteles & El Mundo Actual — 2 Disertaciones</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#f7f3ec;--fondo-alt:#f5f0e4;--tinta:#1f1a14;--tinta-suave:#4a3a10;--acento:#7a4a00;--acento2:#b87a20;--azul:#1e3a5f;--linea:rgba(122,74,0,0.15);--sombra:rgba(122,74,0,0.07);--trans:0.35s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--tinta);font-family:'EB Garamond',Georgia,serif;font-size:1.12rem;line-height:1.9}
+#portada{min-height:100vh;background:linear-gradient(160deg,#f5f0e4 0%,#ece0c8 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+#portada::before{content:'Ω';font-family:'EB Garamond',serif;font-size:44vw;font-weight:800;color:rgba(122,74,0,0.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);pointer-events:none;line-height:1}
+#portada::after{content:'';position:absolute;inset:2rem;border:1px solid rgba(122,74,0,0.1);pointer-events:none}
+.btn-inicio{position:absolute;top:2.5rem;left:2.5rem;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--acento);text-decoration:none;border:1px solid rgba(122,74,0,0.2);padding:.45rem .9rem;transition:var(--trans);z-index:10;background:rgba(247,243,236,0.7)}.btn-inicio:hover{background:white;border-color:var(--acento)}
+.portada-phi{font-family:'EB Garamond',serif;font-size:3rem;color:var(--acento);opacity:.7;margin-bottom:1.5rem;animation:subir 1s ease both}
+.portada-etiqueta{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--acento2);margin-bottom:1.8rem;animation:subir 1s ease .1s both}
+.portada-titulo{font-family:'EB Garamond',serif;font-size:clamp(2.5rem,8vw,5.5rem);font-weight:800;line-height:1.08;color:var(--tinta);animation:subir 1s ease .2s both}
+.portada-titulo em{font-style:italic;color:var(--acento)}
+.portada-sub{margin-top:1.2rem;font-size:1.05rem;font-style:italic;color:var(--tinta-suave);animation:subir 1s ease .3s both}
+.portada-indice{margin-top:3.5rem;display:flex;flex-direction:column;gap:.5rem;width:100%;max-width:620px;animation:subir 1s ease .4s both}
+.portada-item{display:flex;align-items:center;gap:1.2rem;padding:.85rem 1.4rem;background:rgba(255,255,255,0.55);border:1px solid rgba(122,74,0,0.12);text-decoration:none;color:var(--tinta);transition:var(--trans);text-align:left;position:relative;overflow:hidden}
+.portada-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acento);transform:scaleY(0);transition:var(--trans)}
+.portada-item:hover{background:rgba(255,255,255,0.85);transform:translateX(3px)}.portada-item:hover::before{transform:scaleY(1)}
+.item-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--acento);opacity:.25;min-width:1.8rem;line-height:1}
+.item-titulo{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;display:block}
+.item-sub{font-size:.8rem;font-style:italic;color:var(--tinta-suave);display:block;margin-top:.1rem}
+.nav-bar{position:sticky;top:0;z-index:100;background:rgba(247,243,236,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);box-shadow:0 1px 8px var(--sombra);display:flex;align-items:center;padding:0 2rem;height:50px}
+.nav-back{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-suave);text-decoration:none;padding-right:1.4rem;border-right:1px solid var(--linea);margin-right:.8rem;transition:color var(--trans);white-space:nowrap}.nav-back:hover{color:var(--acento)}
+.nav-home{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--acento);text-decoration:none;padding-right:1.4rem;border-right:1px solid var(--linea);margin-right:.8rem;transition:color var(--trans);white-space:nowrap}.nav-home:hover{color:var(--tinta)}
+.nav-ensayos{display:flex;overflow-x:auto;scrollbar-width:none}.nav-ensayos::-webkit-scrollbar{display:none}
+.nav-btn{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);text-decoration:none;padding:0 1rem;height:50px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:var(--trans);white-space:nowrap}.nav-btn:hover{color:var(--tinta);border-color:var(--acento)}
+.ensayo-seccion{min-height:100vh;padding:5rem 0 5.5rem}.ensayo-seccion:nth-child(even){background:var(--fondo-alt)}
+.ensayo-inner{max-width:700px;margin:0 auto;padding:0 2rem}
+.ensayo-head{margin-bottom:2.5rem}.ensayo-meta{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem}
+.ensayo-num{font-family:'EB Garamond',serif;font-size:4.5rem;font-weight:800;line-height:1;color:var(--acento);opacity:.15}
+.tag-categoria{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--acento2)}
+.ensayo-titulo{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:800;line-height:1.2;color:var(--tinta);margin-bottom:.6rem}.ensayo-titulo em{font-style:italic;color:var(--acento)}
+.ensayo-subtitulo{font-size:1rem;font-style:italic;color:var(--tinta-suave);opacity:.8}
+.div-ensayo{border:none;border-top:1px solid var(--linea);margin:2rem 0 2.5rem}
+.cuerpo p{margin-bottom:1.55rem;text-align:justify;hyphens:auto}
+.cuerpo p:first-child::first-letter{font-family:'EB Garamond',serif;font-size:4.2rem;font-weight:800;color:var(--acento);float:left;line-height:.78;margin:.12rem .1rem 0 0}
+.cita{margin:2.5rem 0;padding:1.2rem 1.6rem;border-left:3px solid var(--acento);background:rgba(122,74,0,0.04);font-style:italic;font-size:1.15rem;line-height:1.7;color:var(--tinta-suave)}
+.cita cite{display:block;margin-top:.6rem;font-size:.78rem;font-style:normal;font-family:'Josefin Sans',sans-serif;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--acento2)}
+.concepto{color:var(--acento);font-style:italic}.tension{color:var(--azul);font-style:italic}
+.ensayo-pie{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--linea);display:flex;justify-content:space-between;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);opacity:.55}
+.nav-ensayo{display:flex;justify-content:space-between;align-items:center;max-width:700px;margin:3rem auto 0;padding:0 2rem}
+.btn-nav{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;border:1px solid var(--linea);background:rgba(255,255,255,0.5);text-decoration:none;color:var(--tinta-suave);font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;transition:var(--trans)}.btn-nav:hover{background:white;border-color:var(--acento);color:var(--acento)}.btn-nav.derecha{margin-left:auto}
+.pie-global{background:var(--acento);color:rgba(247,243,236,0.75);text-align:center;padding:2.5rem 2rem;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.pie-global strong{display:block;font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;font-style:italic;color:rgba(247,243,236,0.9);letter-spacing:0;text-transform:none;margin-bottom:.4rem}
+.pie-global a{color:rgba(247,243,236,0.6);text-decoration:none}.pie-global a:hover{color:rgba(247,243,236,0.95)}
+@keyframes subir{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.ensayo-seccion{padding:3.5rem 0 4rem}.ensayo-inner,.nav-ensayo{padding:0 1.3rem}.btn-nav span{display:none}.btn-inicio{top:1.2rem;left:1.2rem}}
+</style>
+</head>
+<body>
+<section id="portada">
+  <a class="btn-inicio" href="filosofia-index.html">← Inicio</a>
+  <div class="portada-phi" aria-hidden="true">Ω</div>
+  <p class="portada-etiqueta">Filosofía contemporánea aplicada</p>
+  <h1 class="portada-titulo">Aristóteles<br><em>&amp; el mundo actual</em></h1>
+  <p class="portada-sub">Dos disertaciones sobre un filósofo que pensó la vida buena para siempre</p>
+  <nav class="portada-indice">
+    <a class="portada-item" href="#d1"><span class="item-num">I</span><span><span class="item-titulo">La eudaimonía frente a la industria de la felicidad</span><span class="item-sub">Aristóteles contra el coaching, el positivismo tóxico y el bienestar de consumo</span></span></a>
+    <a class="portada-item" href="#d2"><span class="item-num">II</span><span><span class="item-titulo">El animal político en la era de la desafección democrática</span><span class="item-sub">El zoon politikon frente a la abstención, el populismo y la crisis de la polis</span></span></a>
+  </nav>
+</section>
+<nav class="nav-bar">
+  <a class="nav-back" href="filosofia-index.html">← Inicio</a>
+  <a class="nav-home" href="#portada">Ω Aristóteles</a>
+  <div class="nav-ensayos"><a class="nav-btn" href="#d1">I · Eudaimonía</a><a class="nav-btn" href="#d2">II · Animal político</a></div>
+</nav>
+
+<section id="d1" class="ensayo-seccion"><div class="ensayo-inner">
+  <header class="ensayo-head"><div class="ensayo-meta"><span class="ensayo-num" aria-hidden="true">I</span><span class="tag-categoria">Eudaimonía &amp; Industria de la felicidad</span></div>
+  <h2 class="ensayo-titulo">La <em>eudaimonía</em> frente a<br>la industria de la felicidad</h2>
+  <p class="ensayo-subtitulo">Aristóteles contra el coaching, el positivismo tóxico y el bienestar de consumo</p></header>
+  <hr class="div-ensayo">
+  <div class="cuerpo">
+    <p>Nunca en la historia de la humanidad se han vendido tantos libros sobre la felicidad. Nunca han florecido tantos coaches, aplicaciones de mindfulness, retiros de bienestar o gurús del pensamiento positivo. Y, paradójicamente, nunca han sido tan altas las tasas de ansiedad, depresión y vacío existencial entre la población joven del mundo occidental. Esta contradicción, que podría parecer un escándalo sociológico, es exactamente lo que Aristóteles habría predicho hace veinticuatro siglos, con una lucidez que asombra.</p>
+    <div class="cita">«La felicidad es una actividad del alma conforme a la virtud.»<cite>— Aristóteles, <em>Ética a Nicómaco</em>, I, 7</cite></div>
+    <p>Para Aristóteles, la <span class="concepto">eudaimonía</span> —habitualmente traducida como felicidad, aunque más exactamente significa «vida lograda» o «florecimiento humano»— no es un estado emocional ni un producto que se adquiere o se experimenta. Es una actividad: el ejercicio continuado y excelente de las capacidades que nos son propias como seres racionales. No se siente: se practica. No se compra: se construye mediante hábitos virtuosos forjados con esfuerzo, disciplina y tiempo. Esta distinción es crucial, y la industria contemporánea del bienestar la ignora sistemáticamente.</p>
+    <p>El mercado de la felicidad opera sobre una premisa radicalmente opuesta a la aristotélica: la de que el bienestar es un estado subjetivo que puede obtenerse mediante técnicas, productos o experiencias. El coaching promete la vida deseada en doce sesiones. Las aplicaciones de meditación garantizan la paz interior en diez minutos diarios. El <span class="tension">positivismo tóxico</span> exige que cada emoción negativa sea reencuadrada, eliminada o ignorada. Aristóteles habría reconocido en todo esto lo que llamó <span class="concepto">vidas erróneas</span>: la vida basada en el placer —que nos esclaviza y nos equipara a los animales—, y la vida basada en el honor y el reconocimiento social —que depende del juicio ajeno—. El scroll de bienestar en Instagram no es sino la versión algorítmica de ambas.</p>
+    <p>Lo que Aristóteles propone en cambio es incómodo precisamente porque es verdadero: la felicidad requiere virtud, y la virtud requiere práctica habitual, no inspiración puntual. Requiere cultivar la <span class="concepto">prudencia</span> —la sabiduría práctica que sabe deliberar bien en cada situación concreta— y las virtudes éticas del carácter: la fortaleza ante la adversidad, la templanza frente a los excesos, la justicia en las relaciones con los demás. Ninguna de estas virtudes se descarga en una aplicación. Ninguna se obtiene en un retiro de fin de semana. Todas exigen lo que nuestra cultura líquida más teme: el compromiso sostenido con el propio desarrollo moral.</p>
+    <p>Aristóteles añade que la felicidad genuina necesita de ciertos bienes externos —salud, relaciones, un mínimo de recursos—, pero que estos son condición necesaria, no suficiente. En una época donde la salud mental se ha convertido en una industria de miles de millones que vende la ilusión del bienestar sin exigir la transformación del carácter, la ética aristotélica no es una reliquia académica: es la crítica más radical y más necesaria que existe.</p>
+  </div>
+  <footer class="ensayo-pie"><span>Aristóteles &amp; el mundo actual</span><span>~&nbsp;500 palabras</span></footer>
+</div>
+<div class="nav-ensayo"><a class="btn-nav" href="#portada">↑ <span>Índice</span></a><a class="btn-nav derecha" href="#d2"><span>Disertación II</span> →</a></div></section>
+
+<section id="d2" class="ensayo-seccion"><div class="ensayo-inner">
+  <header class="ensayo-head"><div class="ensayo-meta"><span class="ensayo-num" aria-hidden="true">II</span><span class="tag-categoria">Zoon politikon &amp; Desafección democrática</span></div>
+  <h2 class="ensayo-titulo">El <em>animal político</em> en la era<br>de la desafección democrática</h2>
+  <p class="ensayo-subtitulo">El <em>zoon politikon</em> frente a la abstención, el populismo y la crisis de la polis</p></header>
+  <hr class="div-ensayo">
+  <div class="cuerpo">
+    <p>Aristóteles define al ser humano como <span class="concepto">zoon politikon</span> —animal político— con una precisión que va mucho más allá de constatar que vivimos en sociedad. Lo que afirma es algo más radical: que fuera de la comunidad política el ser humano no puede desarrollar plenamente su naturaleza racional y moral. Quien vive al margen de la polis, sentenciaba, «o es una bestia o es un dios». Aplicada a la democracia del siglo XXI, esta tesis adquiere una urgencia que nos interpela directamente.</p>
+    <div class="cita">«Es evidente que la ciudad-Estado es una creación de la naturaleza y que el hombre es por naturaleza un animal político.»<cite>— Aristóteles, <em>Política</em>, I, 2</cite></div>
+    <p>Las democracias occidentales atraviesan una crisis profunda de desafección política. La abstención electoral crece especialmente entre los jóvenes. La desconfianza en las instituciones alcanza niveles históricamente elevados. El sentimiento de que la participación individual no cambia nada se ha instalado en amplias capas de la ciudadanía. Paradójicamente, esta retirada de la esfera pública no ha traído tranquilidad privada, sino mayor angustia, mayor polarización y mayor vulnerabilidad ante los populismos que prometen soluciones simples a problemas complejos. Aristóteles habría leído este diagnóstico con tristeza, pero sin sorpresa.</p>
+    <p>Para el filósofo, la <span class="concepto">polis</span> no es solo el lugar donde se resuelven problemas prácticos de convivencia: es el espacio donde el ser humano ejercita las virtudes políticas y donde alcanza su más alta realización moral. Cuando los ciudadanos se retiran de ese espacio, no solo debilitan las instituciones: se mutilan a sí mismos como seres morales, renunciando a una dimensión constitutiva de su humanidad. La <span class="tension">desafección no es inocente</span>; es, en términos aristotélicos, un vicio cívico.</p>
+    <p>El populismo contemporáneo puede leerse también a la luz de Aristóteles. En su <em>Política</em>, el filósofo ya estudiaba la <span class="concepto">demagogia</span> como la corrupción de la democracia: el demagogo que halaga al pueblo en lugar de educarlo, que ofrece certezas fáciles en lugar de deliberación honesta, que sustituye el bien común por el bien del partido o del líder. Aristóteles sabía que la democracia tiene una fragilidad constitutiva: depende de ciudadanos capaces de deliberar virtuosamente, y si esa capacidad se atrofia —por falta de educación, por desinformación, por el hábito de la pasividad— la democracia se degrada en oclocracia, el gobierno de la masa manipulada.</p>
+    <p>La respuesta aristotélica a esta crisis no sería técnica sino moral y educativa. Las leyes y la educación deben orientarse a formar ciudadanos capaces de deliberar honestamente, de comprometerse con el bien común, de ejercer la prudencia política en el espacio público. En una democracia que ha reducido la ciudadanía al acto de votar cada cuatro años, Aristóteles recordaría que ser ciudadano es, ante todo, una práctica cotidiana de virtud compartida. Sin esa práctica, la democracia se convierte en un nombre vacío.</p>
+  </div>
+  <footer class="ensayo-pie"><span>Aristóteles &amp; el mundo actual</span><span>~&nbsp;500 palabras</span></footer>
+</div>
+<div class="nav-ensayo"><a class="btn-nav" href="#d1">← <span>Disertación I</span></a><a class="btn-nav derecha" href="#portada">↑ <span>Inicio</span></a></div></section>
+
+<footer class="pie-global"><strong>Aristóteles &amp; el mundo actual</strong>Filosofía contemporánea aplicada · IES Alquipir · Cehegín · <a href="filosofia-index.html">← Volver al portal</a></footer>
+</body></html>

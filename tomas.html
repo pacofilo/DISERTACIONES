@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santo Tomás de Aquino & El Mundo Actual — 3 Disertaciones</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#f7f3ec;--fondo-alt:#f2ecf5;--tinta:#1f1a14;--tinta-suave:#3a2e40;--acento:#4a0e2d;--acento2:#8b3a6b;--azul:#1e3a5f;--linea:rgba(74,14,45,0.15);--sombra:rgba(31,26,20,0.06);--trans:0.35s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--tinta);font-family:'EB Garamond',Georgia,serif;font-size:1.12rem;line-height:1.9}
+#portada{min-height:100vh;background:linear-gradient(160deg,#f2ecf5 0%,#e8dff0 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+#portada::before{content:'T';font-family:'EB Garamond',serif;font-size:44vw;font-weight:800;color:rgba(74,14,45,0.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);pointer-events:none;line-height:1}
+#portada::after{content:'';position:absolute;inset:2rem;border:1px solid rgba(74,14,45,0.1);pointer-events:none}
+.btn-inicio{position:absolute;top:2.5rem;left:2.5rem;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--acento);text-decoration:none;border:1px solid rgba(74,14,45,0.2);padding:.45rem .9rem;transition:var(--trans);z-index:10;background:rgba(247,243,236,0.7)}.btn-inicio:hover{background:white;border-color:var(--acento)}
+.portada-phi{font-family:'EB Garamond',serif;font-size:3rem;color:var(--acento);opacity:.7;margin-bottom:1.5rem;animation:subir 1s ease both}
+.portada-etiqueta{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--acento2);margin-bottom:1.8rem;animation:subir 1s ease .1s both}
+.portada-titulo{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,7vw,5rem);font-weight:800;line-height:1.08;color:var(--tinta);animation:subir 1s ease .2s both}
+.portada-titulo em{font-style:italic;color:var(--acento)}
+.portada-sub{margin-top:1.2rem;font-size:1.05rem;font-style:italic;color:var(--tinta-suave);animation:subir 1s ease .3s both}
+.portada-indice{margin-top:3.5rem;display:flex;flex-direction:column;gap:.5rem;width:100%;max-width:620px;animation:subir 1s ease .4s both}
+.portada-item{display:flex;align-items:center;gap:1.2rem;padding:.85rem 1.4rem;background:rgba(255,255,255,0.55);border:1px solid rgba(74,14,45,0.12);text-decoration:none;color:var(--tinta);transition:var(--trans);text-align:left;position:relative;overflow:hidden}
+.portada-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acento);transform:scaleY(0);transition:var(--trans)}
+.portada-item:hover{background:rgba(255,255,255,0.85);transform:translateX(3px)}.portada-item:hover::before{transform:scaleY(1)}
+.item-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:800;color:var(--acento);opacity:.25;min-width:1.8rem;line-height:1}
+.item-titulo{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;display:block}
+.item-sub{font-size:.8rem;font-style:italic;color:var(--tinta-suave);display:block;margin-top:.1rem}
+.nav-bar{position:sticky;top:0;z-index:100;background:rgba(247,243,236,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);box-shadow:0 1px 8px var(--sombra);display:flex;align-items:center;padding:0 2rem;height:50px}
+.nav-back{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-suave);text-decoration:none;padding-right:1.4rem;border-right:1px solid var(--linea);margin-right:.8rem;transition:color var(--trans);white-space:nowrap}.nav-back:hover{color:var(--acento)}
+.nav-home{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--acento);text-decoration:none;padding-right:1.4rem;border-right:1px solid var(--linea);margin-right:.8rem;transition:color var(--trans);white-space:nowrap}.nav-home:hover{color:var(--tinta)}
+.nav-ensayos{display:flex;overflow-x:auto;scrollbar-width:none}.nav-ensayos::-webkit-scrollbar{display:none}
+.nav-btn{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);text-decoration:none;padding:0 1rem;height:50px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:var(--trans);white-space:nowrap}.nav-btn:hover{color:var(--tinta);border-color:var(--acento)}
+.ensayo-seccion{min-height:100vh;padding:5rem 0 5.5rem}.ensayo-seccion:nth-child(even){background:var(--fondo-alt)}
+.ensayo-inner{max-width:700px;margin:0 auto;padding:0 2rem}
+.ensayo-head{margin-bottom:2.5rem}.ensayo-meta{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem}
+.ensayo-num{font-family:'EB Garamond',serif;font-size:4.5rem;font-weight:800;line-height:1;color:var(--acento);opacity:.15}
+.tag-categoria{font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--acento2)}
+.ensayo-titulo{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:800;line-height:1.2;color:var(--tinta);margin-bottom:.6rem}.ensayo-titulo em{font-style:italic;color:var(--acento)}
+.ensayo-subtitulo{font-size:1rem;font-style:italic;color:var(--tinta-suave);opacity:.8}
+.div-ensayo{border:none;border-top:1px solid var(--linea);margin:2rem 0 2.5rem}
+.cuerpo p{margin-bottom:1.55rem;text-align:justify;hyphens:auto}
+.cuerpo p:first-child::first-letter{font-family:'EB Garamond',serif;font-size:4.2rem;font-weight:800;color:var(--acento);float:left;line-height:.78;margin:.12rem .1rem 0 0}
+.cita{margin:2.5rem 0;padding:1.2rem 1.6rem;border-left:3px solid var(--acento);background:rgba(74,14,45,0.04);font-style:italic;font-size:1.15rem;line-height:1.7;color:var(--tinta-suave)}
+.cita cite{display:block;margin-top:.6rem;font-size:.78rem;font-style:normal;font-family:'Josefin Sans',sans-serif;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--acento2)}
+.concepto{color:var(--acento);font-style:italic}.tension{color:var(--azul);font-style:italic}
+.ensayo-pie{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--linea);display:flex;justify-content:space-between;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-suave);opacity:.55}
+.nav-ensayo{display:flex;justify-content:space-between;align-items:center;max-width:700px;margin:3rem auto 0;padding:0 2rem}
+.btn-nav{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;border:1px solid var(--linea);background:rgba(255,255,255,0.5);text-decoration:none;color:var(--tinta-suave);font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;transition:var(--trans)}.btn-nav:hover{background:white;border-color:var(--acento);color:var(--acento)}.btn-nav.derecha{margin-left:auto}
+.pie-global{background:var(--acento);color:rgba(247,243,236,0.75);text-align:center;padding:2.5rem 2rem;font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.pie-global strong{display:block;font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:800;font-style:italic;color:rgba(247,243,236,0.9);letter-spacing:0;text-transform:none;margin-bottom:.4rem}
+.pie-global a{color:rgba(247,243,236,0.6);text-decoration:none}.pie-global a:hover{color:rgba(247,243,236,0.95)}
+@keyframes subir{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.ensayo-seccion{padding:3.5rem 0 4rem}.ensayo-inner,.nav-ensayo{padding:0 1.3rem}.btn-nav span{display:none}.btn-inicio{top:1.2rem;left:1.2rem}}
+</style>
+</head>
+<body>
+<section id="portada">
+  <a class="btn-inicio" href="filosofia-index.html">← Inicio</a>
+  <div class="portada-phi" aria-hidden="true">✦</div>
+  <p class="portada-etiqueta">Filosofía contemporánea aplicada</p>
+  <h1 class="portada-titulo">Santo Tomás<br><em>&amp; el mundo actual</em></h1>
+  <p class="portada-sub">Tres disertaciones sobre el gran sistematizador medieval ante el ateísmo científico, el mal y el fundamentalismo</p>
+  <nav class="portada-indice">
+    <a class="portada-item" href="#d1"><span class="item-num">I</span><span><span class="item-titulo">Las vías ante la ciencia y el ateísmo contemporáneo</span><span class="item-sub">Los argumentos tomistas frente al cientificismo, el Big Bang y la pregunta por el origen</span></span></a>
+    <a class="portada-item" href="#d2"><span class="item-num">II</span><span><span class="item-titulo">El problema del mal ante el sufrimiento del siglo XXI</span><span class="item-sub">La teodicea tomista ante las guerras, las pandemias y el sufrimiento de los inocentes</span></span></a>
+    <a class="portada-item" href="#d3"><span class="item-num">III</span><span><span class="item-titulo">Razón y fe ante el fundamentalismo y el cientificismo</span><span class="item-sub">La síntesis tomista frente a los extremos del fanatismo religioso y el dogmatismo científico</span></span></a>
+  </nav>
+</section>
+<nav class="nav-bar">
+  <a class="nav-back" href="filosofia-index.html">← Inicio</a>
+  <a class="nav-home" href="#portada">✦ Tomás</a>
+  <div class="nav-ensayos">
+    <a class="nav-btn" href="#d1">I · Las cinco vías</a>
+    <a class="nav-btn" href="#d2">II · El problema del mal</a>
+    <a class="nav-btn" href="#d3">III · Razón y fe</a>
+  </div>
+</nav>
+
+<section id="d1" class="ensayo-seccion"><div class="ensayo-inner">
+  <header class="ensayo-head"><div class="ensayo-meta"><span class="ensayo-num" aria-hidden="true">I</span><span class="tag-categoria">Las cinco vías &amp; Ateísmo científico</span></div>
+  <h2 class="ensayo-titulo">Las vías ante la ciencia<br>y el <em>ateísmo contemporáneo</em></h2>
+  <p class="ensayo-subtitulo">Los argumentos tomistas frente al cientificismo, el Big Bang y la pregunta por el origen</p></header>
+  <hr class="div-ensayo">
+  <div class="cuerpo">
+    <p>En la <em>Summa Theologiae</em>, Santo Tomás de Aquino formuló cinco vías para demostrar la existencia de Dios partiendo exclusivamente de lo observable: el movimiento, la causalidad, la contingencia, los grados de perfección y el orden de la naturaleza. Todas ellas comparten una estructura lógica común: constatan un hecho empírico, aplican el principio de razón suficiente, niegan la posibilidad de una cadena causal infinita y concluyen en la necesidad de una primera causa. Siete siglos después, el ateísmo científico contemporáneo —representado por autores como Richard Dawkins o Stephen Hawking— cree haber refutado estas vías apelando a la física moderna. Un análisis cuidadoso muestra que el diálogo es más complejo de lo que ambas partes suelen admitir.</p>
+    <div class="cita">«Es necesario llegar a una primera causa eficiente, a la que todos llaman Dios.»<cite>— Santo Tomás de Aquino, <em>Summa Theologiae</em>, I, q. 2, a. 3</cite></div>
+    <p>El argumento más frecuente del ateísmo científico es que la física moderna puede explicar el origen del universo sin necesidad de recurrir a un creador. Hawking argumentó que el tiempo mismo comenzó con el Big Bang, de modo que la pregunta «¿qué había antes?» carece de sentido físico. Este argumento es, en sus propios términos, sólido. Pero conviene advertir que Tomás de Aquino nunca formuló esa pregunta.</p>
+    <p>La <span class="concepto">Segunda Vía</span> no es un argumento sobre lo que ocurrió en el origen del tiempo, sino sobre lo que ocurre ahora mismo. Tomás no pregunta qué evento precedió al universo, sino qué lo sostiene en la existencia en este preciso instante. La cadena de causas que él niega que pueda ser infinita no es una regresión hacia el pasado, sino una serie de dependencias simultáneas y actuales: del mismo modo en que todos los vagones de un tren en marcha dependen del motor que los mueve en ese mismo momento, todo lo que existe depende ahora de algo que lo mantenga en el ser. La física responde con rigor a la pregunta por el origen temporal; la pregunta por la causa actual de que el universo <em>sea</em> permanece intacta.</p>
+    <p>La <span class="concepto">Tercera Vía</span> —la contingencia— es tal vez la más filosóficamente sólida. Tomás argumenta que todo lo que existe podría no existir. Si todo fuera contingente, habría habido un momento en que nada existiera; y si nada hubiera existido, nada podría haber comenzado a existir. Luego debe haber algo <span class="tension">necesario</span>: algo que existe por sí mismo. La física puede describir cómo evoluciona lo que existe, pero no puede responder por qué existe algo en lugar de nada: esa pregunta, como admitió el propio Leibniz, rebasa el alcance de cualquier ciencia empírica.</p>
+    <p>Tomás era perfectamente consciente de que sus vías no demuestran el Dios cristiano de la revelación, sino una primera causa, un ser necesario, una inteligencia ordenadora. El paso de ese primer motor a la Trinidad requiere la fe, no la razón. En esa honestidad intelectual reside una de sus grandes aportaciones: saber exactamente hasta dónde llega la razón y dónde comienza algo distinto.</p>
+  </div>
+  <footer class="ensayo-pie"><span>Santo Tomás &amp; el mundo actual</span><span>~&nbsp;500 palabras</span></footer>
+</div>
+<div class="nav-ensayo"><a class="btn-nav" href="#portada">↑ <span>Índice</span></a><a class="btn-nav derecha" href="#d2"><span>Disertación II</span> →</a></div></section>
+
+<section id="d2" class="ensayo-seccion"><div class="ensayo-inner">
+  <header class="ensayo-head"><div class="ensayo-meta"><span class="ensayo-num" aria-hidden="true">II</span><span class="tag-categoria">Teodicea &amp; Sufrimiento del siglo XXI</span></div>
+  <h2 class="ensayo-titulo">El problema del mal ante<br>el <em>sufrimiento del siglo XXI</em></h2>
+  <p class="ensayo-subtitulo">La teodicea tomista ante las guerras, las pandemias y el sufrimiento de los inocentes</p></header>
+  <hr class="div-ensayo">
+  <div class="cuerpo">
+    <p>El argumento más antiguo y más poderoso contra la existencia de Dios no es científico sino moral: si Dios es omnisciente, omnipotente y sumamente bueno, ¿por qué existe el mal? Si conoce el sufrimiento y puede eliminarlo y es bueno, debería eliminarlo. Y sin embargo, el mal existe. Luego Dios no existe, o si existe, no reúne alguno de esos atributos. Santo Tomás reconoció la fuerza de esta objeción y la convirtió en la primera de las dos que se plantea en el artículo sobre la existencia de Dios de la <em>Summa</em>. La honestidad de plantearse la objeción más devastadora antes de responderla es, en sí misma, un modelo de rigor intelectual.</p>
+    <div class="cita">«Si Dios existiera, no habría ningún mal. Pero hay mal en el mundo. Luego Dios no existe.»<cite>— Objeción primera en <em>Summa Theologiae</em>, I, q. 2, a. 3</cite></div>
+    <p>La respuesta de Tomás —siguiendo a Agustín— no niega el mal sino que lo inserta en un contexto más amplio. Su tesis central es que todo mal particular presupone un bien mayor como condición de posibilidad. La ceguera es un mal, pero presupone la vista, que es un bien. La muerte es un mal, pero presupone la vida. El <span class="concepto">sufrimiento moral</span> presupone la libertad, que es el bien más alto que puede poseer una criatura racional. Tomás añade que Dios no quiere el mal sino que lo permite porque de él puede sacar bienes mayores: la virtud de la paciencia, la solidaridad ante la injusticia, la conversión ante el fracaso.</p>
+    <p>Aplicada al siglo XXI, esta teodicea enfrenta desafíos que Tomás no podía prever en su magnitud. Las guerras del siglo XX con sus decenas de millones de víctimas civiles, el Holocausto, las pandemias que matan indiscriminadamente: ¿cómo puede un ser bueno permitir todo esto? El teólogo contemporáneo John Hick desarrolló la <span class="tension">teodicea de la construcción del alma</span>: el mundo no fue creado como paraíso sino como taller de formación moral, donde el sufrimiento y la dificultad son necesarios para el desarrollo de virtudes genuinas. La bondad que no ha sido probada por la adversidad no es virtud, sino mera comodidad.</p>
+    <p>Sin embargo, algunos filósofos contemporáneos sostienen que ciertos males parecen tan extremos que resulta difícil considerarlos medios para un bien superior. El sufrimiento de niños pequeños, las víctimas de genocidios o las muertes indiscriminadas plantean si realmente todo mal puede justificarse apelando a bienes mayores. Esta objeción mantiene vivo el debate y muestra que la respuesta tomista, aunque influyente, no elimina todas las dificultades filosóficas.</p>
+    <p>Pero quizás la aportación más honesta de la teodicea tomista es reconocer sus propios límites. Tomás sabía que sus argumentos son racionales, no consoladores. La respuesta última al problema del mal en la tradición cristiana —la encarnación y la cruz— no es un argumento racional sino un gesto: Dios entrando en el sufrimiento humano desde dentro. Tomás nunca confundió ambas cosas. Aunque la teodicea tomista no resuelve definitivamente el problema del mal, sí muestra que la existencia del sufrimiento no implica una contradicción lógica inmediata entre Dios y el mundo.</p>
+  </div>
+  <footer class="ensayo-pie"><span>Santo Tomás &amp; el mundo actual</span><span>~&nbsp;500 palabras</span></footer>
+</div>
+<div class="nav-ensayo"><a class="btn-nav" href="#d1">← <span>Disertación I</span></a><a class="btn-nav derecha" href="#d3"><span>Disertación III</span> →</a></div></section>
+
+<section id="d3" class="ensayo-seccion"><div class="ensayo-inner">
+  <header class="ensayo-head"><div class="ensayo-meta"><span class="ensayo-num" aria-hidden="true">III</span><span class="tag-categoria">Razón y fe &amp; Fundamentalismo</span></div>
+  <h2 class="ensayo-titulo">Razón y fe ante el<br><em>fundamentalismo y el cientificismo</em></h2>
+  <p class="ensayo-subtitulo">La síntesis tomista frente a los extremos del fanatismo religioso y el dogmatismo científico</p></header>
+  <hr class="div-ensayo">
+  <div class="cuerpo">
+    <p>Vivimos en una época de fundamentalismos simétricos. Por un lado, el fundamentalismo religioso que rechaza el conocimiento científico cuando contradice una interpretación literal de textos sagrados: negación de la evolución, rechazo de la vacunación, creacionismo. Por otro, el <span class="concepto">cientificismo</span> —que no debe confundirse con la ciencia— que afirma que la ciencia es la única forma válida de conocimiento y que la religión es incompatible con la racionalidad. Ambas posiciones comparten una misma debilidad fundamental: la incapacidad de distinguir entre distintos órdenes de preguntas y distintos tipos de respuesta. Santo Tomás de Aquino resolvió exactamente este problema en el siglo XIII, y su solución sigue siendo filosóficamente vigente.</p>
+    <div class="cita">«La gracia no destruye la naturaleza, sino que la perfecciona.»<cite>— Santo Tomás de Aquino, <em>Summa Theologiae</em>, I, q. 1, a. 8</cite></div>
+    <p>La <span class="concepto">síntesis tomista</span> descansa sobre una distinción nítida entre la teología natural —aquello que la razón puede conocer sobre Dios a partir de la observación del mundo— y la teología revelada —aquello que solo se puede conocer por la fe—. Tomás no pide a la razón que acepte lo que no puede demostrar, ni pide a la fe que renuncie a lo que la razón no puede alcanzar. Cada facultad opera en su dominio propio con sus propias reglas. La razón puede demostrar que Dios existe, que es único y que es inteligente; la fe revela que es Trinidad, que se ha encarnado y que ha resucitado. No hay contradicción porque no hay solapamiento.</p>
+    <p>El cientificismo contemporáneo comete el error que Tomás habría llamado <span class="tension">confusión de géneros</span>: aplica los criterios de verificación empírica a preguntas que son por naturaleza metafísicas. «¿Existe Dios?» no es una pregunta científica: no puede responderse mediante experimento ni observación directa. Pero tampoco es una pregunta sin sentido: es una pregunta filosófica que requiere argumentos racionales sobre causas, contingencia y necesidad. Explicar el Big Bang no es lo mismo que responder por qué hay algo en lugar de nada.</p>
+    <p>El fundamentalismo religioso, en cambio, comete el error inverso: sustituye la investigación racional por la apelación directa a la autoridad religiosa allí donde la razón puede y debe ejercer su tarea. Para Tomás, si un argumento racional estaba sólidamente demostrado, debía ser tomado en serio. La fe nunca puede contradecir a la razón correctamente utilizada, porque ambas proceden de la misma verdad. Cuando parece existir conflicto, el error se encuentra en el razonamiento o en la interpretación humana, no en la verdad misma.</p>
+    <p>La gran lección política de la síntesis tomista es que la convivencia en una sociedad plural requiere precisamente esta distinción: hay preguntas que la razón pública puede responder y sobre las que todos los ciudadanos, creyentes o no, pueden deliberar conjuntamente; y hay preguntas sobre las que la fe habla a quienes la tienen, sin pretender imponerlas por la fuerza de la ley. Tomás pensó esto cuando era revolucionario. Hoy sigue siendo necesario.</p>
+  </div>
+  <footer class="ensayo-pie"><span>Santo Tomás &amp; el mundo actual</span><span>~&nbsp;500 palabras</span></footer>
+</div>
+<div class="nav-ensayo"><a class="btn-nav" href="#d2">← <span>Disertación II</span></a><a class="btn-nav derecha" href="#portada">↑ <span>Inicio</span></a></div></section>
+
+<footer class="pie-global"><strong>Santo Tomás &amp; el mundo actual</strong>Filosofía contemporánea aplicada · IES Alquipir · Cehegín · <a href="filosofia-index.html">← Volver al portal</a></footer>
+</body></html>
